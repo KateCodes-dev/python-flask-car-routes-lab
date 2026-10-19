@@ -4,19 +4,19 @@ from flask import Flask
 # Initialize the Flask application.
 app = Flask(__name__)
 
-# List of existing car models used by the lab tests.
+# Existing car models used by the application.
 existing_models = ["Crossroads"]
 
 
-# Default route: display the welcome message.
+# Default route.
 @app.route("/")
-def home():
+def index():
     return "Welcome to Flatiron Cars"
 
 
-# Model route: check whether the requested model exists.
+# Route for checking a specific car model.
 @app.route("/<model>")
-def car_model(model):
+def model(model):
     if model in existing_models:
         return f"Flatiron {model} is in our fleet!"
 
